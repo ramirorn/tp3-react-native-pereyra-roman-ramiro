@@ -4,7 +4,8 @@ App para que alumnos y docentes del Instituto Politécnico Formosa reporten desp
 
 Trabajo Práctico N° 3 — *Permisos móviles: Android, iOS y Expo* (Taller Complementario – React Native II). Las respuestas de las Partes A a F están en [RESPUESTAS.md](RESPUESTAS.md).
 
-- Expo SDK 57 · Expo Router · TypeScript
+- Expo SDK 58 · Expo Router · TypeScript
+  > La consigna pide SDK 57 y el proyecto se creó con esa versión, pero se actualizó a **SDK 58** porque Expo Go para iOS solo soporta la última versión del SDK (en iPhone no se puede instalar un Expo Go anterior). Las APIs de permisos y las opciones de los plugins usadas son las mismas en las dos versiones; SDK 58 sigue apuntando a API 36 y exigiendo iOS 16.4.
 - Módulos: `expo-camera`, `expo-location`, `expo-image-picker`, `expo-notifications` (instalados con `npx expo install`). **No** se usa `expo-permissions`.
 
 ## Cómo correrla
@@ -160,7 +161,7 @@ Cada uno genera `<uses-permission … tools:node="remove" />` en el manifiesto f
 
 ## Auditoría del manifiesto (desafío opcional)
 
-Resultado de `npx expo prebuild --clean --platform android` con Expo SDK 57 (`targetSdkVersion` 36). Se revisó el `AndroidManifest.xml` generado y los manifiestos de las librerías que se fusionan al compilar (`node_modules/*/android/src/main/AndroidManifest.xml`):
+Resultado de `npx expo prebuild --clean --platform android` (generado con SDK 57; SDK 58 mantiene el mismo `targetSdkVersion`) (`targetSdkVersion` 36). Se revisó el `AndroidManifest.xml` generado y los manifiestos de las librerías que se fusionan al compilar (`node_modules/*/android/src/main/AndroidManifest.xml`):
 
 | Permiso | Quién lo agrega | Tipo | ¿Queda? |
 | --- | --- | --- | --- |

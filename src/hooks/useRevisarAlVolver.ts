@@ -10,7 +10,7 @@ export function useRevisarAlVolver(revisar: () => void) {
 
   useEffect(() => {
     const sub = AppState.addEventListener('change', (nuevo) => {
-      const estabaAfuera = /inactive|background/.test(anterior.current);
+      const estabaAfuera = /inactive|background/.test(anterior.current ?? '');
       if (estabaAfuera && nuevo === 'active') revisar();
       anterior.current = nuevo;
     });
