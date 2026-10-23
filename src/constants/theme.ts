@@ -24,7 +24,16 @@ export const Colors = {
   },
 } as const;
 
-export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
+/** Colores de la app que no cambian con el modo claro/oscuro. */
+export const Colores = {
+  primario: '#1F6FEB',
+  pendiente: '#D97706',
+  enCurso: '#2563EB',
+  resuelto: '#16A34A',
+  bloqueado: '#DC2626',
+} as const;
+
+export type ThemeColor =keyof typeof Colors.light & keyof typeof Colors.dark;
 
 export const Fonts = Platform.select({
   ios: {
